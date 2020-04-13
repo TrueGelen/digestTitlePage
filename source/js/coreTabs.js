@@ -7,6 +7,7 @@ export function getPropertyOfElement(element, property) {
 }
 
 export default function buildDigestListElements() {
+	console.log('called')
 	const digestList = document.querySelector('#digestList')
 	const widthOfDigestList = digestList.getBoundingClientRect().width
 	// const heightOfDigestList = digestList.getBoundingClientRect().height
@@ -63,6 +64,7 @@ export default function buildDigestListElements() {
 		}
 
 	} else {
+		console.log('else');
 		[...elements].forEach(elem => {
 			elem.style.left = ''
 
@@ -82,15 +84,17 @@ export default function buildDigestListElements() {
 				// console.log('setTimeout:', 400 / (elements.length - i))
 			}, (i + 1) * 50)
 
-			totRight += stepTo
+			totRight += stepTo;
 
 			//это удалить
-			console.log('here', tabsAmount, i)
-			if (i >= tabsAmount) {
-				elements[i].style.display = 'none'
-			} else {
-				elements[i].style.display = ''
-			}
+			[...elements].forEach((elem, i) => {
+				if (i >= tabsAmount) {
+					elements[i].style.display = 'none'
+				} else {
+					elements[i].style.display = ''
+				}
+			})
+
 		}
 	}
 }
