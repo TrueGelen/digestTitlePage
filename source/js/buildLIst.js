@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 	const reverseBtn = document.querySelector('#menu__reverseList')
 
 	reverseBtn.addEventListener('click', () => {
-		console.log('click')
+		// console.log('click')
 		if (reverseBtn.innerHTML.trim() === 'reverse')
 			reverseBtn.innerHTML = 'reverse to def'
 		else

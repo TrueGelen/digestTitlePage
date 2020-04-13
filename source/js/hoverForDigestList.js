@@ -70,11 +70,11 @@ window.addEventListener('load', () => {
 		[...digests].forEach((elem, ind) => {
 			// console.log('elem, ind', elem, ind)
 
-			if (reverseBtn.innerHTML.trim() === 'reverse') {
+			if (tabsAmount >= ind) {
 
-				if (tabsAmount >= ind) {
+				if (reverseBtn.innerHTML.trim() === 'reverse') {
 
-					if (not !== 0 && not !== tabsAmount - 1) {
+					if (not !== 0 && not !== digests.length - 1) {
 						if (not < ind) {
 							elem.style.transform = 'translateX(5%)'
 						} else if (not > ind) {
@@ -96,7 +96,7 @@ window.addEventListener('load', () => {
 
 				} else {
 
-					if (not !== 0 && not !== tabsAmount - 1) {
+					if (not !== 0 && not !== digests.length - 1) {
 						if (not < ind) {
 							elem.style.transform = 'translateX(5%)'
 						} else if (not > ind) {
@@ -105,7 +105,7 @@ window.addEventListener('load', () => {
 							this.style.transform = 'translateX(-5%)'
 						}
 					} else {
-						if (not === tabsAmount - 1) {
+						if (not === digests.length - 1) {
 							elem.style.transform = 'translateX(-10%)'
 						} else {
 							if (ind === not)
@@ -140,9 +140,10 @@ window.addEventListener('load', () => {
 			// const halfWidth = window.innerWidth / 100 * 50
 			// const digestAmount
 
-			if (reverseBtn.innerHTML.trim() === 'reverse') {
+			if (tabsAmount >= ind) {
 
-				if (tabsAmount >= ind) {
+				if (reverseBtn.innerHTML.trim() === 'reverse') {
+
 					if (not !== 0 && not !== tabsAmount - 1) {
 						if (not < ind) {
 							elem.style.left = `${(50 + (50 / (tabsAmount) * (ind + 1))) - 100}%`
