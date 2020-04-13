@@ -63,6 +63,7 @@ window.addEventListener('load', () => {
 
 	function hover() {
 		const not = [...digests].findIndex(elem => elem === this);
+		const tabsAmount = document.querySelector('#inpTabs').value;
 
 		// this.style.transform = 'translateX(5%)';
 
@@ -70,47 +71,51 @@ window.addEventListener('load', () => {
 			// console.log('elem, ind', elem, ind)
 
 			if (reverseBtn.innerHTML.trim() === 'reverse') {
-				if (not !== 0 && not !== digests.length - 1) {
-					if (not < ind) {
-						elem.style.transform = 'translateX(5%)'
-					} else if (not > ind) {
-						elem.style.transform = 'translateX(-5%)'
-					} else {
-						this.style.transform = 'translateX(5%)'
-					}
-				} else {
-					if (not === 0) {
-						elem.style.transform = 'translateX(10%)'
-					} else {
-						if (ind !== not) {
-							elem.style.transform = 'translateX(-10%)'
+
+				if (tabsAmount >= ind) {
+
+					if (not !== 0 && not !== tabsAmount - 1) {
+						if (not < ind) {
+							elem.style.transform = 'translateX(5%)'
+						} else if (not > ind) {
+							elem.style.transform = 'translateX(-5%)'
 						} else {
-							elem.style.transform = 'translateX(-20px)'
+							this.style.transform = 'translateX(5%)'
+						}
+					} else {
+						if (not === 0) {
+							elem.style.transform = 'translateX(10%)'
+						} else {
+							if (ind !== not) {
+								elem.style.transform = 'translateX(-10%)'
+							} else {
+								elem.style.transform = 'translateX(-20px)'
+							}
 						}
 					}
-				}
 
-			} else {
-
-				if (not !== 0 && not !== digests.length - 1) {
-					if (not < ind) {
-						elem.style.transform = 'translateX(5%)'
-					} else if (not > ind) {
-						elem.style.transform = 'translateX(-5%)'
-					} else {
-						this.style.transform = 'translateX(-5%)'
-					}
 				} else {
-					if (not === digests.length - 1) {
-						elem.style.transform = 'translateX(-10%)'
-					} else {
-						if (ind === not)
-							elem.style.transform = 'translateX(20px)'
-						else
-							elem.style.transform = 'translateX(10%)'
-					}
-				}
 
+					if (not !== 0 && not !== tabsAmount - 1) {
+						if (not < ind) {
+							elem.style.transform = 'translateX(5%)'
+						} else if (not > ind) {
+							elem.style.transform = 'translateX(-5%)'
+						} else {
+							this.style.transform = 'translateX(-5%)'
+						}
+					} else {
+						if (not === tabsAmount - 1) {
+							elem.style.transform = 'translateX(-10%)'
+						} else {
+							if (ind === not)
+								elem.style.transform = 'translateX(20px)'
+							else
+								elem.style.transform = 'translateX(10%)'
+						}
+					}
+
+				}
 			}
 
 
@@ -126,6 +131,7 @@ window.addEventListener('load', () => {
 
 	function hover2() {
 		const not = [...digests].findIndex(elem => elem === this);
+		const tabsAmount = document.querySelector('#inpTabs').value;
 
 		// this.style.transform = 'translateX(5%)';
 
@@ -135,53 +141,54 @@ window.addEventListener('load', () => {
 			// const digestAmount
 
 			if (reverseBtn.innerHTML.trim() === 'reverse') {
-				if (not !== 0 && not !== digests.length - 1) {
-					if (not < ind) {
-						elem.style.left = `${(50 + (50 / (digests.length) * (ind + 1))) - 100}%`
-					} else if (not > ind) {
-						elem.style.left = `${(50 / (digests.length) * (ind + 1)) - 100}%`
-					} else {
-						this.style.left = `${(50 + (50 / (digests.length) * (ind)) + 50 / (digests.length)) - 100}%`
-					}
-				} else {
-					if (not === 0) {
-						if (ind === 0)
-							elem.style.left = `${(50 + (50 / (digests.length))) - 100}%`
-						else
-							elem.style.left = `${(50 + (50 / (digests.length) * (ind + 1))) - 100}%`
-					} else {
-						if (ind !== not) {
-							elem.style.left = `${((50 / (digests.length) * (ind + 1))) - 100}%`
+
+				if (tabsAmount >= ind) {
+					if (not !== 0 && not !== tabsAmount - 1) {
+						if (not < ind) {
+							elem.style.left = `${(50 + (50 / (tabsAmount) * (ind + 1))) - 100}%`
+						} else if (not > ind) {
+							elem.style.left = `${(50 / (tabsAmount) * (ind + 1)) - 100}%`
 						} else {
-							elem.style.left = '-20px'
+							this.style.left = `${(50 + (50 / (tabsAmount) * (ind)) + 50 / (tabsAmount)) - 100}%`
+						}
+					} else {
+						if (not === 0) {
+							if (ind === 0)
+								elem.style.left = `${(50 + (50 / (tabsAmount))) - 100}%`
+							else
+								elem.style.left = `${(50 + (50 / (tabsAmount) * (ind + 1))) - 100}%`
+						} else {
+							if (ind !== not) {
+								elem.style.left = `${((50 / (tabsAmount) * (ind + 1))) - 100}%`
+							} else {
+								elem.style.left = '-20px'
+							}
 						}
 					}
-				}
 
-			} else {
-
-				if (not !== 0 && not !== digests.length - 1) {
-					if (not < ind) {
-						elem.style.left = elem.style.left = `${(50 + (50 / (digests.length) * (ind + 1)))}%`
-					} else if (not > ind) {
-						elem.style.left = `${(50 / (digests.length) * (ind + 1)) - 100}%`
-					} else {
-						this.style.left = `${(50 + (50 / (digests.length) * (ind)) + 50 / (digests.length))}% `
-					}
 				} else {
-					if (not === digests.length - 1) {
-						elem.style.transform = 'translateX(-10%)'
+
+					if (not !== 0 && not !== tabsAmount - 1) {
+						if (not < ind) {
+							elem.style.left = elem.style.left = `${(50 + (50 / (tabsAmount) * (ind + 1)))}%`
+						} else if (not > ind) {
+							elem.style.left = `${(50 / (tabsAmount) * (ind + 1)) - 100}%`
+						} else {
+							this.style.left = `${(50 + (50 / (tabsAmount) * (ind)) + 50 / (tabsAmount))}% `
+						}
 					} else {
-						if (ind === not)
-							elem.style.transform = 'translateX(20px)'
-						else
-							elem.style.transform = 'translateX(10%)'
+						if (not === tabsAmount - 1) {
+							elem.style.transform = 'translateX(-10%)'
+						} else {
+							if (ind === not)
+								elem.style.transform = 'translateX(20px)'
+							else
+								elem.style.transform = 'translateX(10%)'
+						}
 					}
+
 				}
-
 			}
-
-
 		})
 	}
 
