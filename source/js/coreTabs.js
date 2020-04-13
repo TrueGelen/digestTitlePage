@@ -73,7 +73,7 @@ export default function buildDigestListElements() {
 
 		let totRight = stepTo;
 
-		for (let i = elements.length - 1; i >= 0; i--) {
+		for (let i = tabsAmount - 1; i >= 0; i--) {
 			elements[i].style.right = `${totRight - 100}%`
 			elements[i].style.zIndex = `${i}`
 
@@ -85,7 +85,8 @@ export default function buildDigestListElements() {
 			totRight += stepTo
 
 			//это удалить
-			if (i < elements.length - tabsAmount) {
+			console.log('here', tabsAmount, i)
+			if (i >= tabsAmount) {
 				elements[i].style.display = 'none'
 			} else {
 				elements[i].style.display = ''
