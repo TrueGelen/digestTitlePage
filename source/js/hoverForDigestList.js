@@ -74,7 +74,7 @@ window.addEventListener('load', () => {
 
 				if (reverseBtn.innerHTML.trim() === 'reverse') {
 
-					if (not !== 0 && not !== digests.length - 1) {
+					if (not !== 0 && not !== tabsAmount - 1) {
 						if (not < ind) {
 							elem.style.transform = 'translateX(5%)'
 						} else if (not > ind) {
@@ -96,7 +96,7 @@ window.addEventListener('load', () => {
 
 				} else {
 
-					if (not !== 0 && not !== digests.length - 1) {
+					if (not !== 0 && not !== tabsAmount - 1) {
 						if (not < ind) {
 							elem.style.transform = 'translateX(5%)'
 						} else if (not > ind) {
@@ -105,7 +105,7 @@ window.addEventListener('load', () => {
 							this.style.transform = 'translateX(-5%)'
 						}
 					} else {
-						if (not === digests.length - 1) {
+						if (not === tabsAmount - 1) {
 							elem.style.transform = 'translateX(-10%)'
 						} else {
 							if (ind === not)
