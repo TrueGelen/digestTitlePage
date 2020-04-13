@@ -161,7 +161,7 @@ body, div, h1, h2, h3, h4, p, input {
     }
 	}
 
-	&__reverseList{
+	&__btn{
 		display: inline-block;
 		padding: 10px 20px;
 		background-color: rgb(255, 255, 255);
@@ -177,6 +177,27 @@ body, div, h1, h2, h3, h4, p, input {
 
 		&:active{
 			box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 255, 0.479);
+		}
+	}
+
+	&__btnhov{
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: rgb(255, 255, 255);
+		border-radius: 15px;
+		cursor: pointer;
+		transition: .2s;
+
+		&:hover{
+			box-shadow: 0px 0px 4px 0px blue;
+		}
+
+		&:active{
+			box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 255, 0.479);
+		}
+
+		&_enabled{
+			background-color: rgb(0, 225, 255);
 		}
 	}
 
